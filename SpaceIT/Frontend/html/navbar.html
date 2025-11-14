@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpaceIT - Navbar</title>
+    <link rel="stylesheet" href="../style/navbar.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <!-- Logo bal oldal -->
+            <div class="navbar-logo">
+                <svg width="50" height="50" viewBox="0 0 50 50" class="logo-svg">
+                    <circle cx="25" cy="25" r="20" fill="none" stroke="#a0b8d0" stroke-width="2" class="orbit"/>
+                    <circle cx="25" cy="25" r="15" fill="none" stroke="#a0b8d0" stroke-width="1.5" class="orbit" opacity="0.6"/>
+                    <circle cx="25" cy="25" r="10" fill="none" stroke="#a0b8d0" stroke-width="1" class="orbit" opacity="0.4"/>
+                    <circle cx="25" cy="25" r="5" fill="#a0b8d0" class="planet"/>
+                    <circle cx="35" cy="15" r="2" fill="#ffffff" class="star"/>
+                    <circle cx="15" cy="35" r="1.5" fill="#ffffff" class="star"/>
+                    <circle cx="40" cy="30" r="1" fill="#ffffff" class="star"/>
+                </svg>
+                <span class="logo-text">SpaceIT</span>
+            </div>
+
+            <!-- Navigációs menü középen -->
+            <ul class="navbar-menu">
+                <li class="navbar-item">
+                    <a href="#fooldal" class="navbar-link">Főoldal</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#rolunk" class="navbar-link">Rólunk</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#szolgaltatasaink" class="navbar-link">Szolgáltatásaink</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#referenciaink" class="navbar-link">Referenciáink</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#galeria" class="navbar-link">Galéria</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#kapcsolat" class="navbar-link">Kapcsolat</a>
+                </li>
+            </ul>
+
+            <!-- CTA gomb jobb oldal -->
+            <div class="navbar-cta">
+                <button class="cta-button">
+                    <span>Fedezd fel a lehetőségeid</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" class="arrow-icon">
+                        <path d="M7 3L14 10L7 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobil menü gomb -->
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <script src="../scripts/navbar.js"></script>
+</body>
+</html>
+

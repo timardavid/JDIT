@@ -1,0 +1,217 @@
+/* Main Section */
+.main-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh;
+    background: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Csillagok konténer */
+.stars-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.star {
+    position: absolute;
+    background: #ffffff;
+    border-radius: 50%;
+    animation: twinkle 3s ease-in-out infinite;
+    opacity: 0;
+}
+
+.star.small {
+    width: 2px;
+    height: 2px;
+    box-shadow: 0 0 2px rgba(255, 255, 255, 0.8);
+}
+
+.star.medium {
+    width: 3px;
+    height: 3px;
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.9);
+}
+
+.star.large {
+    width: 4px;
+    height: 4px;
+    box-shadow: 0 0 6px rgba(255, 255, 255, 1);
+}
+
+/* Main Content */
+.main-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 2rem;
+    animation: fadeInUp 1s ease-out;
+}
+
+.main-title {
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+    letter-spacing: 2px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.main-subtitle {
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    animation: bounce 2s infinite;
+}
+
+.scroll-arrow {
+    width: 30px;
+    height: 50px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 25px;
+    position: relative;
+}
+
+.scroll-arrow::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    animation: scrollDown 2s infinite;
+}
+
+/* Next Section */
+.next-section {
+    min-height: 100vh;
+    background: #0a0a0a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.section-content {
+    max-width: 1200px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.section-content h2 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    margin-bottom: 2rem;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.section-content p {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    color: rgba(255, 255, 255, 0.7);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Animációk */
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+@keyframes scrollDown {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px);
+    }
+}
+
+/* Reszponzív design */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .main-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .scroll-indicator {
+        bottom: 2rem;
+    }
+    
+    .scroll-arrow {
+        width: 25px;
+        height: 40px;
+    }
+}
+
